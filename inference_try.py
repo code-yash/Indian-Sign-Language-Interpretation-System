@@ -4,16 +4,16 @@ import cv2
 import mediapipe as mp
 import numpy as np
 
-# model_dict1 = pickle.load(open('./model1.p', 'rb'))
-# model_dict2 = pickle.load(open('./model2.p', 'rb'))
-# model1 = model_dict1['model1']
-# model2 = model_dict2['model2']
+model_dict1 = pickle.load(open('./model1.p', 'rb'))
+model_dict2 = pickle.load(open('./model2.p', 'rb'))
+model1 = model_dict1['model1']
+model2 = model_dict2['model2']
 
-with open('model1.p', 'rb') as f1:
-    model1 = pickle.load(f1)
-
-with open('model2.p', 'rb') as f2:
-    model2 = pickle.load(f2)
+# with open('model1.p', 'rb') as f1:
+#     model1 = pickle.load(f1)
+#
+# with open('model2.p', 'rb') as f2:
+#     model2 = pickle.load(f2)
 
 
 cap = cv2.VideoCapture(0)
