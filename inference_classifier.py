@@ -16,10 +16,10 @@ mp_hands = mp.solutions.hands
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
 
-hands = mp_hands.Hands(static_image_mode=True, max_num_hands=2 ,min_detection_confidence=0.3)
+hands = mp_hands.Hands(static_image_mode=True, max_num_hands=2, min_detection_confidence=0.3)
 
-labels_dict1 = {0: '1', 1: '2', 2: '3',3: '4', 4: '5',5:'6',6: '7', 7: '8', 8: '9',9: 'C', 10: 'I',11:'L',12: 'O', 13: 'U', 14:'V'}
-labels_dict2 = {0: 'A', 1: 'B', 2: 'D',3: 'E', 4: 'F',5:'G',6: 'H', 7: 'J', 8: 'K',9: 'M', 10: 'N',11:'P',12: 'Q', 13: 'R', 14:'S',15: 'T', 16: 'W', 17: 'X',18: 'Y', 19: 'Z'}
+labels_dict1 = {0: '1', 1: '2', 2: '3', 3: '4', 4: '5', 5: '6', 6: '7', 7: '8', 8: '9', 11: 'C', 18: 'I', 21: 'L', 24: 'O', 30: 'U', 31: 'V', 9: 'A', 10: 'B', 12: 'D', 13: 'E', 14: 'F', 15: 'G', 16: 'H', 19: 'J', 20: 'K', 22: 'M', 23: 'N', 25: 'P', 26: 'Q', 27: 'R', 28: 'S', 29: 'T', 32: 'W', 33: 'X', 34: 'Y', 35: 'Z'}
+labels_dict2 = {0: '1', 1: '2', 2: '3', 3: '4', 4: '5', 5: '6', 6: '7', 7: '8', 8: '9', 11: 'C', 18: 'I', 21: 'L', 24: 'O', 30: 'U', 31: 'V', 9: 'A', 10: 'B', 12: 'D', 13: 'E', 14: 'F', 15: 'G', 16: 'H', 19: 'J', 20: 'K', 22: 'M', 23: 'N', 25: 'P', 26: 'Q', 27: 'R', 28: 'S', 29: 'T', 32: 'W', 33: 'X', 34: 'Y', 35: 'Z'}
 while True:
 
     data_aux = []
@@ -56,7 +56,7 @@ while True:
                 y = hand_landmarks.landmark[i].y
                 data_aux.append(x - min(x_))
                 data_aux.append(y - min(y_))
-        if n==1:
+        if n == 1:
             
             x1 = int(min(x_) * W) - 10
             y1 = int(min(y_) * H) - 10
@@ -87,7 +87,7 @@ while True:
                         cv2.LINE_AA)
 
     cv2.imshow('frame', frame)
-    cv2.waitKey(1)
+    cv2.waitKey(20)
 
 
 cap.release()
