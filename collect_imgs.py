@@ -1,7 +1,6 @@
 import os
-import numpy as np
-import cv2 
-from pathlib import Path
+# import numpy as np
+import cv2
 
 
 DATA_DIR = './data'
@@ -21,7 +20,7 @@ for j in range(number_of_classes):
     done = False
     while True:
         ret, frame = cap.read()
-        cv2.putText(frame, 'Ready? Press "S" ! :)', (100, 50), cv2.FONT_HERSHEY_SIMPLEX, 1.3, (0, 255, 0), 3,
+        cv2.putText(frame, 'Ready? Press "S" to Start Capturing ! :)', (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2,
                     cv2.LINE_AA)
         cv2.imshow('frame', frame)
         if cv2.waitKey(25) == ord('s'):
